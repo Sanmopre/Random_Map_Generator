@@ -12,7 +12,7 @@ public class Map_Generator : MonoBehaviour
 
     public int octaves;
 
-    const int mapChunkSize = 241;
+    public const int mapChunkSize = 241;
 
     [Range(0,6)]
     public int levelOfDetail;
