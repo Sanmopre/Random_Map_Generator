@@ -11,7 +11,13 @@ public class Viewer_Movement : MonoBehaviour
 
     public Transform viewer;
     public CharacterController character;
-    // Update is called once per frame
+
+
+    void Start() {
+        Cursor.visible = false;
+    }
+
+
     void Update()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitibvity * Time.deltaTime;
@@ -23,6 +29,10 @@ public class Viewer_Movement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
 
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
 
         viewer.Rotate(Vector3.up * mouseX);
 
